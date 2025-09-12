@@ -3,7 +3,7 @@ module purge
 module load cuDNN virtualenv
 
 #to be modified with your username
-cd /home/serafina.di-gioia/lustre/training_t-7bpcjwtiufg/users/serafina.di-gioia/
+cd /home/$USER/lustre/training_t-7bpcjwtiufg/users/$USER/
 
 
 python3 -m venv Seraenv/
