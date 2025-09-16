@@ -1,6 +1,7 @@
 import requests
 import zipfile
 import sys
+from tqdm import tqdm
 
 Toubkal_username=str(sys.argv[1])
 
@@ -10,18 +11,23 @@ os.makedirs(DATA_PATH, exist_ok=True)
 
 
 def download_and_extract(domain, DATA_PATH=DATA_PATH):
-
     BASE_URL = "https://zenodo.org/records/15797226/files"
 
     zip_path = os.path.join(DATA_PATH, f"{domain}_domain.zip")
     download_url = f"{BASE_URL}/{domain}_domain.zip?download=1"
 
-    # Download the zip file
+    # Stream download with progress bar
     with requests.get(download_url, stream=True) as r:
         r.raise_for_status()
-        with open(zip_path, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
+        total_size = int(r.headers.get("Content-Length", 0))
+        block_size = 8192  # 8 KB
+
+        with open(zip_path, 'wb') as f, tqdm(
+            total=total_size, unit="B", unit_scale=True, desc=f"Downloading {domain}_domain.zip"
+        ) as pbar:
+            for chunk in r.iter_content(chunk_size=block_size):
                 f.write(chunk)
+                pbar.update(len(chunk))
 
     # Extract zip contents into DATA_PATH
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
