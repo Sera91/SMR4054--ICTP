@@ -9,7 +9,7 @@ source /home/$USER/lustre/training_t-7bpcjwtiufg/shared/Tutenv/bin/activate
 
 #entering the local repo for the tutorial
 
-cd /home/$USER/lustre/training_t-7bpcjwtiufg/$USER/SMR4054--ICTP/Tutorial/Day7/RCM-emulation-tutorial/data/
+cd /home/$USER/lustre/training_t-7bpcjwtiufg/users/$USER/SMR4054--ICTP/Tutorial/Day7/RCM-emulation-tutorial/data/
 
 python data_download.py $USER
                                     
