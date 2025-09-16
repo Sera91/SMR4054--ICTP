@@ -5,7 +5,7 @@ import sys
 Toubkal_username=str(sys.argv[1])
 
 domain = 'NZ'
-DATA_PATH = '/home/'+ Toubkal_username+'/lustre/training_t-7bpcjwtiufg/'+ Toubkal_username+'/SMR4054--ICTP/Tutorial/Day7/RCM-emulation-tutorial/data/CORDEXBench/{domain}'
+DATA_PATH = '/home/'+ Toubkal_username+'/lustre/training_t-7bpcjwtiufg/users/'+ Toubkal_username+'/SMR4054--ICTP/Tutorial/Day7/RCM-emulation-tutorial/data/CORDEXBench/{domain}'
 os.makedirs(DATA_PATH, exist_ok=True)
 
 
