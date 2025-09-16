@@ -1,3 +1,5 @@
+## General Information
+
 This folder contains a hands-on Python tutorial for training and evaluating a Deep Learning (DL) based Regional Climate Model (RCM) emulator using an early version of the CORDEX-ML-Benchmark. It serves as an illustration for users who are beginning to develop RCM emulators. Here, they will find notebooks that cover how to access the data, load the different experiments, and train DL models with PyTorch. The set of dependencies is kept minimal to ensure accessibility for most users.
 
 In `./requirements`, there is an `environment.yaml` file to easily replicate the Conda environment required to run all the scripts in this folder. To create the environment, run the following command:
@@ -28,3 +30,17 @@ The CORDEX-ML-Benchmark data is publicly available on [Zenodo](https://zenodo.or
 Once the data is downloaded, `./dl-model/training_evaluation.ipynb` demonstrates the full process of building an RCM emulator using the benchmark dataset. This notebook uses pure PyTorch for the DL model and shows how to train and evaluate it across different frameworks (focusing on the Perfect Framework for training). It encompasses the main workflow for working with the benchmark, allowing users, once the benchmark is publicly available, to contribute by scoring their own RCM emulators against the baseline models (currently under construction) based on the various evaluation experiments.
 
 If you would like to stay informed about the Benchmark and contribute when it becomes available, please contact Jose González-Abad (gonzabad@ifca.unican.es).
+
+## Directions to explore
+- Train an RCM emulator for the **ALPS domain**
+- Train an RCM emulator for **precipitation**
+	- Consider which **loss function** would be most suitable
+- Develop new **evaluation metrics**
+- Experiment with new **deep learning architectures**
+
+You may find inspiration in the following works:
+- https://link.springer.com/article/10.1007/s00382-024-07350-8
+- https://journals.ametsoc.org/view/journals/aies/4/4/AIES-D-24-0121.1.xml
+- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024MS004668
+- https://arxiv.org/abs/2407.04724
+- https://proceedings.mlr.press/v151/price22a.html
