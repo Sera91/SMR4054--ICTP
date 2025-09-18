@@ -1,4 +1,4 @@
-name: /leonardo/pub/userexternal/sdigioia/sdigioia/env/RLenv
+name: GNNenv
 channels:
   - conda-forge
   - defaults
